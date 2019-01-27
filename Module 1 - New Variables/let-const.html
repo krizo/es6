@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>let and const</title>
+  </head>
+  <body>
+    <script>
+      const key = 'abc123';
+      let points = 50;
+      let winner = false;
+
+      const person = {
+        name: 'kriz',
+        age: 40
+      }
+
+      // attributes of const object CAN be changed
+      person.age = 41; 
+
+      //Not allowing chaning object's attributes:
+        Object.freeze(person);
+
+      // Can't assign new object to already declacred one
+      // person = { name: 'kriz2', age: 42 }; 
+
+      
+
+
+      const wes = Object.freeze(person);
+    </script>
+  </body>
+</html>
