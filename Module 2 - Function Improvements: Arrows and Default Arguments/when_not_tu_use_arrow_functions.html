@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title> When do not use arrow functions </title>
+</head>
+
+<body>
+  <style>
+    button {
+      font-size: 100px;
+    }
+
+    .on {
+      background: #ffc600;
+    }
+  </style>
+  <button id="pushy">Push Me</button>
+
+  <script>
+    const button = document.querySelector("#pushy");
+
+    // When using this bound to specific object
+    button.addEventListener('click', function() {
+      this.classNames.toggle('on');
+    });
+
+    // When you need a method to bind toi an object
+    const person = {
+      points: 23,
+      score: function() {
+        this.points++;
+      }
+    }
+
+    // When you need to add a prototype method
+    class Car {
+      constructor(make, colour) {
+        this.make = make;
+        this.colour = colour;
+      }
+    }
+
+    const bmw = new Car('bmw', 'blue');
+    const subie = new Car('subaru', 'red');
+
+    Car.prototype.summarize = function() {
+      return `This car is a ${this.make} in the colour ${this.colour}`;
+    }
+    console.log(bmw.summarize());
+
+    // When you need arguments object
+    const orderChildren = function() {
+      const children = Array.from(arguments);
+      return children.map((child, i) => {
+        return `${child} was child ${i+1}`;
+      });
+    }
+
+    console.log(orderChildren('kriz', 'emi', 'pepe'));
+
+  </script>
+</body>
+
+</html>

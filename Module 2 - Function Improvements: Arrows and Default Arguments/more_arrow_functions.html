@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title> More arrow functions </title>
+</head>
+
+<body>
+  <script>
+    const race = '100m Dash';
+    const winners = ['Pete Sandoval', 'Peter Steele', 'Phil Anselmo']
+
+    // wrap () around returned object in implicit return:
+    const win = winners.map((winner, i) => ({
+      name: winner,
+      race: race,
+      place: i + 1
+    }));
+    console.table(win);
+
+    // Filtering:    
+    const ages = [23, 62, 45, 44, 67, 89, 74, 22, 100];
+    const veryOld = ages.filter(age => age >= 60);
+    console.log(veryOld);
+  </script>
+</body>
+
+</html>

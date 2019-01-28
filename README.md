@@ -5,3 +5,6 @@
 * Use `const` by default
 * Only use `let` if rebinding is needed
 * `var` shouldn't be used in ES6
+
+## Module 2 - Function Improvements: Arrows and Default Arguments
+
