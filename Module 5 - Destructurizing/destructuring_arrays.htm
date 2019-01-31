@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Destructuring Arrays</title>
+</head>
+
+<body>
+  <script>
+    const details = ['Wes Bos', 123, 'wesbos.com'];
+    const [name, id, website] = details;
+    // name = 'Wes Bose', id = 123, website = 'wesbos.com'
+
+    const data = 'Basketball,Sports,90210,23,wes,bos,cool';
+    const [itemName, category, sku, inventory] = data.split(',');
+    //itemName = 'Basketball', category = 'Sports', sku = '90210', inventory = '23'
+
+    const team = ['Wes', 'Harry', 'Sarah', 'Keegan', 'Riker'];
+    const [captain, assistant, ...players] = team;
+    // captain = 'Wes', assistant = 'Harry', players = [ 'Sarah', 'Keegan', 'Riker' ] 
+    // ... - rest operator
+
+    // Swapping variables with destructuring:
+    let inRing = 'Hulk Hogan';
+    let onSide = 'The Rock';
+    console.log(inRing, onSide);
+    [inRing, onSide] = [onSide, inRing];
+    console.log(inRing, onSide);
+
+    
+  </script>
+</body>
+
+</html>
